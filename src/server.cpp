@@ -6,13 +6,6 @@ using namespace std;
 
 void printBook( struct Books book );
 
-// struct Books {
-//    char  title[50];
-//    char  author[50];
-//    char  subject[100];
-//    int   book_id;
-// };
-
 struct Books {
     int   itemNumber;
     char  itemName[50];

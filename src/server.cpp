@@ -4,25 +4,47 @@
 
 using namespace std;
 
-struct PERSON {   // Declare PERSON struct type
-    int age;   // Declare member types
-    long ss;
-    float weight;
-    char name[25];
-} family_member;   // Define object of type PERSON
+void printBook( struct Books book );
+
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+};
 int main(int argc, char *argv[])
 {
     ros::init(argc, argv, "busroute");
-    struct PERSON sister;   // C style structure declaration
-    PERSON brother;   // C++ style structure declaration
-    sister.age = 13;   // assign values to members
-    brother.age = 7;
-    cout << "sister.age = " << sister.age << '\n';
-    cout << "brother.age = " << brother.age << '\n';
+    struct Books Book1;        // Declare Book1 of type Book
+    struct Books Book2;        // Declare Book2 of type Book
+
+    // book 1 specification
+    strcpy( Book1.title, "Learn C++ Programming");
+    strcpy( Book1.author, "Chand Miyan");
+    strcpy( Book1.subject, "C++ Programming");
+    Book1.book_id = 6495407;
+
+    // book 2 specification
+    strcpy( Book2.title, "Telecom Billing");
+    strcpy( Book2.author, "Yakit Singha");
+    strcpy( Book2.subject, "Telecom");
+    Book2.book_id = 6495700;
+
+    // Print Book1 info
+    printBook( Book1 );
+
+    // Print Book2 info
+    printBook( Book2 );
 
 
 
 
     ros::spin(); //Spinns the ros packages
     return 0;
+}
+void printBook( struct Books book ) {
+   cout << "Book title : " << book.title <<endl;
+   cout << "Book author : " << book.author <<endl;
+   cout << "Book subject : " << book.subject <<endl;
+   cout << "Book id : " << book.book_id <<endl;
 }

@@ -4,9 +4,9 @@
 
 using namespace std;
 
-void printBook( struct Books book );
+void printItem( struct Items Item );
 
-struct Books {
+struct Items {
     int   itemNumber;
     char  itemName[50];
     float x_coordinate;
@@ -18,29 +18,28 @@ struct Books {
 int main(int argc, char *argv[])
 {
     ros::init(argc, argv, "busroute");
-    struct Books Book1;        // Declare Book1 of type Book
-    struct Books Book2;        // Declare Book2 of type Book
+    struct Items Item1;        // Declare Item1 of type Item
+    struct Items Item2;        // Declare Item2 of type Item
 
-    // book 1 specification
-    Book1.itemNumber = 649;
-    strcpy( Book1.itemName, "Chand Miyan");
-    Book1.x_coordinate = 159.643924;
-    Book1.y_coordinate = 159.643924;
-    Book1.shelf = 1;
-    Book1.rack = 1;
+      // Item 1 specification
+      Item1.itemNumber = 649;
+      strcpy( Item1.itemName, "Chand Miyan");
+      Item1.x_coordinate = 159.643924;
+      Item1.y_coordinate = 159.643924;
+      Item1.shelf = 1;
+      Item1.rack = 1;
 
-
-    // Print Book1 info
-    printBook( Book1 );
+    // Print Item1 info
+    printItem( Item1 );
 
     ros::spin(); //Spinns the ros packages
     return 0;
 }
-void printBook( struct Books book ) {
-  std::cerr << "itemNumber: " << book.itemNumber << '\n';
-  std::cerr << "itemName: " << book.itemName << '\n';
-  std::cerr << "x-coordinate: " << book.x_coordinate << '\n';
-  std::cerr << "y-coordinate" << book.y_coordinate << '\n';
-  std::cerr << "shelf: " << book.shelf << '\n';
-  std::cerr << "rack: " << book.rack << '\n';
+void printItem( struct Items Item ) {
+  std::cerr << "itemNumber: " << Item.itemNumber << '\n';
+  std::cerr << "itemName: " << Item.itemName << '\n';
+  std::cerr << "x-coordinate: " << Item.x_coordinate << '\n';
+  std::cerr << "y-coordinate" << Item.y_coordinate << '\n';
+  std::cerr << "shelf: " << Item.shelf << '\n';
+  std::cerr << "rack: " << Item.rack << '\n';
 }

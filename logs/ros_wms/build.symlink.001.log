@@ -1,0 +1,7 @@
+Linked: (/home/albert/rosmini/devel/.private/ros_wms/lib/pkgconfig/ros_wms.pc, /home/albert/rosmini/devel/lib/pkgconfig/ros_wms.pc)
+Linked: (/home/albert/rosmini/devel/.private/ros_wms/lib/python2.7/dist-packages/ros_wms/__init__.py, /home/albert/rosmini/devel/lib/python2.7/dist-packages/ros_wms/__init__.py)
+Linked: (/home/albert/rosmini/devel/.private/ros_wms/lib/ros_wms/server, /home/albert/rosmini/devel/lib/ros_wms/server)
+Linked: (/home/albert/rosmini/devel/.private/ros_wms/share/ros_wms/cmake/ros_wms-msg-extras.cmake, /home/albert/rosmini/devel/share/ros_wms/cmake/ros_wms-msg-extras.cmake)
+Linked: (/home/albert/rosmini/devel/.private/ros_wms/share/ros_wms/cmake/ros_wmsConfig.cmake, /home/albert/rosmini/devel/share/ros_wms/cmake/ros_wmsConfig.cmake)
+Linked: (/home/albert/rosmini/devel/.private/ros_wms/share/ros_wms/cmake/ros_wms-msg-paths.cmake, /home/albert/rosmini/devel/share/ros_wms/cmake/ros_wms-msg-paths.cmake)
+Linked: (/home/albert/rosmini/devel/.private/ros_wms/share/ros_wms/cmake/ros_wmsConfig-version.cmake, /home/albert/rosmini/devel/share/ros_wms/cmake/ros_wmsConfig-version.cmake)

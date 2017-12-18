@@ -1,0 +1,13 @@
+[35m[1mScanning dependencies of target client[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/client.dir/src/client.cpp.o[0m
+[ 75%] Built target server
+[100%] [32m[1mLinking CXX executable /home/albert/rosmini/devel/.private/ros_wms/lib/ros_wms/client[0m
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+CMakeFiles/client.dir/build.make:113: recipe for target '/home/albert/rosmini/devel/.private/ros_wms/lib/ros_wms/client' failed
+make[2]: *** [/home/albert/rosmini/devel/.private/ros_wms/lib/ros_wms/client] Error 1
+CMakeFiles/Makefile2:744: recipe for target 'CMakeFiles/client.dir/all' failed
+Makefile:138: recipe for target 'all' failed
+make[1]: *** [CMakeFiles/client.dir/all] Error 2
+make: *** [all] Error 2

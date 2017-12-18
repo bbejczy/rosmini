@@ -1,0 +1,3 @@
+CMake Error: Error in cmake code at
+/home/albert/rosmini/src/CMakeLists.txt:211:
+Parse error.  Function missing ending ")".  End of file reached.

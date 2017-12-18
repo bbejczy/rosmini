@@ -1,0 +1,9 @@
+[31m[1mCMake Error[0m at /home/albert/rosmini/src/./CMakeLists.txt:206 (add_dependencies):
+  add_dependencies called with incorrect number of arguments
+
+
+[31m[1mCMake Error[0m at /home/albert/rosmini/src/./CMakeLists.txt:209 (target_link_libraries):
+  Cannot specify link libraries for target "client" which is not built by
+  this project.
+
+

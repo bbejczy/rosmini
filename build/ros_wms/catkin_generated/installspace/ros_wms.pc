@@ -1,0 +1,8 @@
+prefix=/home/albert/rosmini/install
+
+Name: ros_wms
+Description: Description of ros_wms
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/albert/rosmini/install/lib 
+Requires: 

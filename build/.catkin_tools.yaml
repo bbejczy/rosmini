@@ -1,0 +1,6 @@
+devel_space: /home/albert/rosmini/devel
+install: false
+install_space: /home/albert/rosmini/install
+profile: default
+source_space: /home/albert/rosmini/src
+workspace: /home/albert/rosmini

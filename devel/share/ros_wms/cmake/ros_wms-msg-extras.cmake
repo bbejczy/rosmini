@@ -1,0 +1,1 @@
+/home/albert/rosmini/devel/.private/ros_wms/share/ros_wms/cmake/ros_wms-msg-extras.cmake

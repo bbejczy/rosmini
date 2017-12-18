@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/albert/rosmini/devel/.private/ros_wms/setup.sh

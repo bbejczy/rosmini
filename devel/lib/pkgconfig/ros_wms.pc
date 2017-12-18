@@ -1,1 +1,0 @@
-/home/bbejczy/rosmini/devel/.private/ros_wms/lib/pkgconfig/ros_wms.pc

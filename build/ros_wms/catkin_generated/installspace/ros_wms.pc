@@ -1,8 +1,0 @@
-prefix=/home/bbejczy/rosmini/install
-
-Name: ros_wms
-Description: Description of ros_wms
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/bbejczy/rosmini/install/lib 
-Requires: 

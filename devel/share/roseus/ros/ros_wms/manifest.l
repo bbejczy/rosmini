@@ -1,1 +1,0 @@
-/home/bbejczy/rosmini/devel/.private/ros_wms/share/roseus/ros/ros_wms/manifest.l

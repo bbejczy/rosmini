@@ -6,12 +6,22 @@ using namespace std;
 
 void printBook( struct Books book );
 
+// struct Books {
+//    char  title[50];
+//    char  author[50];
+//    char  subject[100];
+//    int   book_id;
+// };
+
 struct Books {
-   char  title[50];
-   char  author[50];
-   char  subject[100];
-   int   book_id;
+    int   itemNumber;
+    char  itemName[50];
+    float x_coordinate;
+    float y_coordinate;
+    int shelf;
+    int rack;
 };
+
 int main(int argc, char *argv[])
 {
     ros::init(argc, argv, "busroute");
@@ -19,32 +29,25 @@ int main(int argc, char *argv[])
     struct Books Book2;        // Declare Book2 of type Book
 
     // book 1 specification
-    strcpy( Book1.title, "Learn C++ Programming");
-    strcpy( Book1.author, "Chand Miyan");
-    strcpy( Book1.subject, "C++ Programming");
-    Book1.book_id = 6495407;
+    Book1.itemNumber = 649;
+    strcpy( Book1.itemName, "Chand Miyan");
+    Book1.x_coordinate = 159.643924;
+    Book1.y_coordinate = 159.643924;
+    Book1.shelf = 1;
+    Book1.rack = 1;
 
-    // book 2 specification
-    strcpy( Book2.title, "Telecom Billing");
-    strcpy( Book2.author, "Yakit Singha");
-    strcpy( Book2.subject, "Telecom");
-    Book2.book_id = 6495700;
 
     // Print Book1 info
     printBook( Book1 );
-
-    // Print Book2 info
-    printBook( Book2 );
-
-
-
 
     ros::spin(); //Spinns the ros packages
     return 0;
 }
 void printBook( struct Books book ) {
-   cout << "Book title : " << book.title <<endl;
-   cout << "Book author : " << book.author <<endl;
-   cout << "Book subject : " << book.subject <<endl;
-   cout << "Book id : " << book.book_id <<endl;
+  std::cerr << "itemNumber: " << book.itemNumber << '\n';
+  std::cerr << "itemName: " << book.itemName << '\n';
+  std::cerr << "x-coordinate: " << book.x_coordinate << '\n';
+  std::cerr << "y-coordinate" << book.y_coordinate << '\n';
+  std::cerr << "shelf: " << book.shelf << '\n';
+  std::cerr << "rack: " << book.rack << '\n';
 }

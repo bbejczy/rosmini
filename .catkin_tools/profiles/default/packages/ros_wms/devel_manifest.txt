@@ -1,0 +1,8 @@
+ros_wms
+/home/bbejczy/rosmini/devel/.private/ros_wms/share/roseus/ros/ros_wms/manifest.l /home/bbejczy/rosmini/devel/share/roseus/ros/ros_wms/manifest.l
+/home/bbejczy/rosmini/devel/.private/ros_wms/share/ros_wms/cmake/ros_wms-msg-extras.cmake /home/bbejczy/rosmini/devel/share/ros_wms/cmake/ros_wms-msg-extras.cmake
+/home/bbejczy/rosmini/devel/.private/ros_wms/share/ros_wms/cmake/ros_wms-msg-paths.cmake /home/bbejczy/rosmini/devel/share/ros_wms/cmake/ros_wms-msg-paths.cmake
+/home/bbejczy/rosmini/devel/.private/ros_wms/share/ros_wms/cmake/ros_wmsConfig.cmake /home/bbejczy/rosmini/devel/share/ros_wms/cmake/ros_wmsConfig.cmake
+/home/bbejczy/rosmini/devel/.private/ros_wms/share/ros_wms/cmake/ros_wmsConfig-version.cmake /home/bbejczy/rosmini/devel/share/ros_wms/cmake/ros_wmsConfig-version.cmake
+/home/bbejczy/rosmini/devel/.private/ros_wms/lib/python2.7/dist-packages/ros_wms/__init__.py /home/bbejczy/rosmini/devel/lib/python2.7/dist-packages/ros_wms/__init__.py
+/home/bbejczy/rosmini/devel/.private/ros_wms/lib/pkgconfig/ros_wms.pc /home/bbejczy/rosmini/devel/lib/pkgconfig/ros_wms.pc

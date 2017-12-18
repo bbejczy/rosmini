@@ -1,0 +1,11 @@
+[31m[1mCMake Error[0m at /opt/ros/kinetic/share/catkin/cmake/assert.cmake:20 (message):
+
+
+  Assertion failed: file '/home/bbejczy/rosmini/src/ros_wms/msg/Message1.msg'
+  does not exist.  Message: message file not found
+
+[36mCall Stack (most recent call first):[0m
+  /opt/ros/kinetic/share/genmsg/cmake/genmsg-extras.cmake:113 (assert_file_exists)
+  CMakeLists.txt:50 (add_message_files)
+
+

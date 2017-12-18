@@ -1,0 +1,7 @@
+Symlinking /home/bbejczy/rosmini/devel/share/roseus/ros/ros_wms/manifest.l
+Symlinking /home/bbejczy/rosmini/devel/share/ros_wms/cmake/ros_wms-msg-extras.cmake
+Symlinking /home/bbejczy/rosmini/devel/share/ros_wms/cmake/ros_wms-msg-paths.cmake
+Symlinking /home/bbejczy/rosmini/devel/share/ros_wms/cmake/ros_wmsConfig.cmake
+Symlinking /home/bbejczy/rosmini/devel/share/ros_wms/cmake/ros_wmsConfig-version.cmake
+Symlinking /home/bbejczy/rosmini/devel/lib/python2.7/dist-packages/ros_wms/__init__.py
+Symlinking /home/bbejczy/rosmini/devel/lib/pkgconfig/ros_wms.pc

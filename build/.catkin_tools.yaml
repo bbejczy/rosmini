@@ -1,0 +1,6 @@
+devel_space: /home/bbejczy/rosmini/devel
+install: false
+install_space: /home/bbejczy/rosmini/install
+profile: default
+source_space: /home/bbejczy/rosmini/src
+workspace: /home/bbejczy/rosmini

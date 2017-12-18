@@ -1,0 +1,8 @@
+prefix=/home/bbejczy/rosmini/devel/.private/ros_wms
+
+Name: ros_wms
+Description: Description of ros_wms
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/bbejczy/rosmini/devel/.private/ros_wms/lib 
+Requires: 

@@ -202,5 +202,5 @@ include_directories(
 add_executable(server src/server.cpp)
 target_link_libraries(server ${catkin_LIBRARIES})
 
-##add_executable(client src/client.cpp)
-##target_link_libraries(client ${catkin_LIBRARIES})
+add_executable(client src/client.cpp)
+target_link_libraries(client ${catkin_LIBRARIES})

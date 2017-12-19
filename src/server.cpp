@@ -31,8 +31,17 @@ int main(int argc, char *argv[])
       Item[0].row = 1;
       Item[0].column = 44;
 
+      Item[1].itemNumber = 650;
+      strcpy( Item[1].itemName, "Sune Petersen");
+      Item[1].x_coordinate = 158.643924;
+      Item[1].y_coordinate = 158.643924;
+      Item[1].shelf = 2;
+      Item[1].row = 3;
+      Item[1].column = 24;
+
     // Print Item1 info
     printItem( Item[0] );
+    printItem( Item[1] );
 
     ros::spin(); //Spinns the ros packages
     return 0;

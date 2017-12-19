@@ -1,53 +1,45 @@
-<<<<<<< current
-=======
 #include <iostream>
 #include <ros/ros.h>
 
 
 using namespace std;
 
-void printBook( struct Books book );
+void printItem( struct Items Item );
 
-struct Books {
-   char  title[50];
-   char  author[50];
-   char  subject[100];
-   int   book_id;
+struct Items {
+    int   itemNumber;
+    char  itemName[50];
+    float x_coordinate;
+    float y_coordinate;
+    int shelf;
+    int rack;
 };
+
 int main(int argc, char *argv[])
 {
     ros::init(argc, argv, "busroute");
-    struct Books Book1;        // Declare Book1 of type Book
-    struct Books Book2;        // Declare Book2 of type Book
+    struct Items Item1;        // Declare Item1 of type Item
+    struct Items Item2;        // Declare Item2 of type Item
 
-    // book 1 specification
-    strcpy( Book1.title, "Learn C++ Programming");
-    strcpy( Book1.author, "Chand Miyan");
-    strcpy( Book1.subject, "C++ Programming");
-    Book1.book_id = 6495407;
+      // Item 1 specification
+      Item1.itemNumber = 649;
+      strcpy( Item1.itemName, "Chand Miyan");
+      Item1.x_coordinate = 159.643924;
+      Item1.y_coordinate = 159.643924;
+      Item1.shelf = 1;
+      Item1.rack = 1;
 
-    // book 2 specification
-    strcpy( Book2.title, "Telecom Billing");
-    strcpy( Book2.author, "Yakit Singha");
-    strcpy( Book2.subject, "Telecom");
-    Book2.book_id = 6495700;
-
-    // Print Book1 info
-    printBook( Book1 );
-
-    // Print Book2 info
-    printBook( Book2 );
-
-
-
+    // Print Item1 info
+    printItem( Item1 );
 
     ros::spin(); //Spinns the ros packages
     return 0;
 }
-void printBook( struct Books book ) {
-   cout << "Book title : " << book.title <<endl;
-   cout << "Book author : " << book.author <<endl;
-   cout << "Book subject : " << book.subject <<endl;
-   cout << "Book id : " << book.book_id <<endl;
+void printItem( struct Items Item ) {
+  std::cerr << "itemNumber: " << Item.itemNumber << '\n';
+  std::cerr << "itemName: " << Item.itemName << '\n';
+  std::cerr << "x-coordinate: " << Item.x_coordinate << '\n';
+  std::cerr << "y-coordinate" << Item.y_coordinate << '\n';
+  std::cerr << "shelf: " << Item.shelf << '\n';
+  std::cerr << "rack: " << Item.rack << '\n';
 }
->>>>>>> before discard

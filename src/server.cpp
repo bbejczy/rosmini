@@ -1,15 +1,20 @@
+<<<<<<< current
 #include "ros/ros.h"
 #include "ros_wms/AddTwoInts.h"
-#include <string>
-#include <cstdlib>
+=======
+#include <iostream>
+#include <ros/ros.h>
+#include <ros_wms/AddTwoInts.h>
+>>>>>>> before discard
+
   ros_wms::AddTwoInts srv;
 
 //Hardcoded database of wares in the form of a struct
   struct product {
-    string itemName;
+    char itemName[50];
     int itemNumber;
     int location;
-  } apple, banana, item;
+  } item, apple, banana;
 
 bool add(ros_wms::AddTwoInts::Request  &req,
          ros_wms::AddTwoInts::Response &res)
@@ -29,7 +34,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "add_two_ints_server");
   apple.itemNumber = 3;
   apple.location = 2;
-  apple.itemName = "apple";
+  apple.itemName = apple;
   item.itemNumber = apple.itemNumber;
   item.location = apple.location;
   item.itemName = apple.itemName;

@@ -1,6 +1,0 @@
-int64 itemNumber
-string itemName
----
-int64 itemNumber
-int64 location
-string itemName

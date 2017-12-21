@@ -1,26 +1,50 @@
 #include "ros/ros.h"
 #include "ros_wms/AddTwoInts.h"
-//
+#include <string>
+#include <cstdlib>
+  ros_wms::AddTwoInts srv;
+
+//Hardcoded database of wares in the form of a struct
+  struct product {
+    string itemName;
+    int itemNumber;
+    int location;
+  } apple, banana, item;
+
 bool add(ros_wms::AddTwoInts::Request  &req,
          ros_wms::AddTwoInts::Response &res)
 {
-  res.sum = req.a + req.b;
-  ROS_INFO("request: x=%ld, y=%ld", (long int)req.a, (long int)req.b);
-  ROS_INFO("sending back response: [%ld]", (long int)res.sum);
+  if (req.itemNumber = 1) {
+    res.itemNumber = apple.itemNumber;
+    std::cerr << "You should see this" << '\n';
+    std::cerr << "Request item number: " << req.itemNumber << '\n';
+    std::cerr << "Response item number: " << res.itemNumber << '\n';
+
+  }
   return true;
 }
 
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "add_two_ints_server");
+  apple.itemNumber = 3;
+  apple.location = 2;
+  apple.itemName = "apple";
+  item.itemNumber = apple.itemNumber;
+  item.location = apple.location;
+  item.itemName = apple.itemName;
   ros::NodeHandle n;
 
   ros::ServiceServer service = n.advertiseService("add_two_ints", add);
-  ROS_INFO("Ready to add two ints.");
+  ROS_INFO("Warehouse stuff.");
   ros::spin();
 
   return 0;
 }
+
+
+
+
 
 // #include <iostream>
 // #include <ros/ros.h>

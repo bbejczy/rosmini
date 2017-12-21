@@ -1,4 +1,5 @@
-int64 a
-int64 b
+int64 itemNumber
+string itemName
 ---
-int64 sum
+int64 itemNumber
+int64 location

@@ -6,20 +6,15 @@
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "add_two_ints_client");
-  if (argc != 3)
-  {
-    ROS_INFO("usage: add_two_ints_client X Y");
-    return 1;
-  }
 
   ros::NodeHandle n;
   ros::ServiceClient client = n.serviceClient<ros_wms::AddTwoInts>("add_two_ints");
   ros_wms::AddTwoInts srv;
-  srv.request.a = atoll(argv[1]);
-  srv.request.b = atoll(argv[2]);
+  int a = 1, b = 2;
+  srv.request.itemNumber = a;
   if (client.call(srv))
   {
-    ROS_INFO("Sum: %ld", (long int)srv.response.sum);
+  //  ROS_INFO("Sum: %ld", (long int)srv.response.sum);
   }
   else
   {

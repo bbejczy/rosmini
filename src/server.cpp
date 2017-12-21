@@ -14,22 +14,30 @@
 
 
 
-void printProduct( struct products products ) {
-std::cerr << "itemNumber: " << product[1].itemNumber << '\n';
-std::cerr << "itemName: " << product[1].itemName << '\n';
-std::cerr << "location: " << product[1].location << '\n';
+  void printProduct( struct products product ) {
+    // struct productss {
+    //   char itemName[50];
+    //   int itemNumber;
+    //   int location;
+    // };
+    //struct productss *productss;
+    //productss[0].itemNumber = products_print.itemNumber;
+  std::cerr << "itemNumber: " << product.itemNumber << '\n';
+  std::cerr << "itemName: " << product.itemName << '\n';
+  std::cerr << "location: " << product.location << '\n';
 
-}
+  }
 
 bool add(ros_wms::AddTwoInts::Request  &req,
-         ros_wms::AddTwoInts::Response &res)
+         ros_wms::AddTwoInts::Response &res
+          )
 {
   if (req.itemNumber = 1) {
     // res.itemNumber = apple.itemNumber;
     // std::cerr << "You should see this" << '\n';
     // std::cerr << "Request item number: " << req.itemNumber << '\n';
     // std::cerr << "Response item number: " << res.itemNumber << '\n';
-    printProduct(product[1]);
+    //printProduct(product[1]);
 
   }
   return true;
@@ -77,6 +85,7 @@ int main(int argc, char **argv)
 
   return 0;
 }
+
 
 
 

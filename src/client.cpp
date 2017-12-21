@@ -1,17 +1,20 @@
 #include "ros/ros.h"
 #include "ros_wms/serv.h"
 #include <cstdlib>
+#include <string>
+#include <iostream>
 
 int x;
 
 void printResponse(){
   ros::NodeHandle n;
-  ros::ServiceClient client = n.serviceClient<ros_wms::serv>("add_two_ints");
+  ros::ServiceClient client = n.serviceClient<ros_wms::serv>("wms");
   ros_wms::serv srv;
 
   srv.request.itemNumber = x -1;
   if (client.call(srv))
   {
+  std::cout << "Item name: " <<  srv.response.itemName << '\n';
   std::cout << "Item number: " << srv.response.itemNumber << '\n';
   std::cout << "Item x-coordinate: " << srv.response.x_coordinate << '\n';
   std::cout << "Item y-coordinate: " << srv.response.y_coordinate << '\n';
@@ -21,13 +24,32 @@ void printResponse(){
   }
   else
   {
-    ROS_ERROR("Failed to call service add_two_ints");
+    ROS_ERROR("Failed to call service warehouse management system");
   }
+}
+
+void printList(){
+  ros::NodeHandle n;
+  ros::ServiceClient client = n.serviceClient<ros_wms::serv>("wms");
+  ros_wms::serv srv;
+  int count = 5;
+  for (int i = 0; i < count; i++)
+  {
+    int a = i + 1;
+    if (client.call(srv))
+
+    {
+      srv.request.itemNumber = i;
+      std::cout << "Item number " << a << ": " << srv.response.itemName << '\n';
+    }
+
+  }
+   std::cout << '\n' << '\n';
 }
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "add_two_ints_client");
+  ros::init(argc, argv, "Warehouse_management_system_client");
 
   //Defines y as an integer
   int y = 0;
@@ -36,12 +58,8 @@ int main(int argc, char **argv)
       std::cout << "Welcome to the B2-12 Warehouse Management System Interface" << '\n'
                 << "" << '\n' << '\n'
                 << "Please select a product to recieve further information about." << '\n'
-                << "Enter a number corresponding to the list below: " << '\n' << '\n'
-                << "1. Shovel" << '\n'
-                << "2. Aluminum ruler" << '\n'
-                << "3. Screwdriver" << '\n'
-                << "4. Utility knife" << '\n'
-                << "5. Steel hammer" << '\n' << '\n';
+                << "Enter a number corresponding to the list below: " << '\n' << '\n';
+                printList();
 
 
       //takes input as value x
@@ -93,9 +111,9 @@ int main(int argc, char **argv)
           break;
           }
 
-
           if (y == 1)
           printResponse();
+
 
   return 0;
 }

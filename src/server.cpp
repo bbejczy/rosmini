@@ -4,15 +4,22 @@
 
   ros_wms::AddTwoInts srv;
 
-//Hardcoded database of wares in the form of a struct
+
   struct products {
     char itemName[50];
     int itemNumber;
     int location;
   };
-  int k = 1;
   struct products *product;
 
+
+
+void printProduct( struct products products ) {
+std::cerr << "itemNumber: " << product[1].itemNumber << '\n';
+std::cerr << "itemName: " << product[1].itemName << '\n';
+std::cerr << "location: " << product[1].location << '\n';
+
+}
 
 bool add(ros_wms::AddTwoInts::Request  &req,
          ros_wms::AddTwoInts::Response &res)
@@ -22,6 +29,7 @@ bool add(ros_wms::AddTwoInts::Request  &req,
     // std::cerr << "You should see this" << '\n';
     // std::cerr << "Request item number: " << req.itemNumber << '\n';
     // std::cerr << "Response item number: " << res.itemNumber << '\n';
+    printProduct( product[1] );
 
   }
   return true;

@@ -55,8 +55,9 @@ int main(int argc, char **argv)
   int y = 0;
   //opening message
       std::cout << "\033[2J\033[1;1H"; //Clears the terminal
-      std::cout << "Welcome to the B2-12 Warehouse Management System Interface" << '\n'
-                << "" << '\n' << '\n'
+      std::cout << "Welcome to the B2-12 Warehouse Management System Interface" << '\n';
+      label:
+      std::cout << "" << '\n' << '\n'
                 << "Please select a product to recieve further information about." << '\n'
                 << "Enter a number corresponding to the list below: " << '\n' << '\n';
                 printList();
@@ -114,6 +115,12 @@ int main(int argc, char **argv)
           if (y == 1)
           printResponse();
 
+          std::cout << "Do you want to continue retrieving data? (y/n)." << '\n';
+          char ans;
+          std::cin >> ans;
+          if(ans == 'y')
+            goto label;
+          else
 
   return 0;
 }

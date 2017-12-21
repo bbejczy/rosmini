@@ -29,7 +29,7 @@ bool add(ros_wms::AddTwoInts::Request  &req,
     // std::cerr << "You should see this" << '\n';
     // std::cerr << "Request item number: " << req.itemNumber << '\n';
     // std::cerr << "Response item number: " << res.itemNumber << '\n';
-    printProduct( product[1] );
+    printProduct(product[1]);
 
   }
   return true;

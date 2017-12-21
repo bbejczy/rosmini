@@ -1,11 +1,5 @@
-<<<<<<< current
 #include "ros/ros.h"
 #include "ros_wms/AddTwoInts.h"
-=======
-#include <iostream>
-#include <ros/ros.h>
-#include <ros_wms/AddTwoInts.h>
->>>>>>> before discard
 
   ros_wms::AddTwoInts srv;
 

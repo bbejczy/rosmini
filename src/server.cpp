@@ -1,16 +1,18 @@
 #include "ros/ros.h"
 #include "ros_wms/AddTwoInts.h"
+#include <iostream>
 
   ros_wms::AddTwoInts srv;
 
 //Hardcoded database of wares in the form of a struct
-  struct product {
+  struct products {
     char itemName[50];
     int itemNumber;
     int location;
   };
-  struct product[n];
-  int n = 10;
+  int k = 1;
+  struct products *product;
+
 
 bool add(ros_wms::AddTwoInts::Request  &req,
          ros_wms::AddTwoInts::Response &res)
@@ -24,16 +26,41 @@ bool add(ros_wms::AddTwoInts::Request  &req,
   }
   return true;
 }
+void databaseHardcoded()
+{
+  //Hardcoded database
+  product[1].itemNumber = 1;
+  product[1].location = 2;
+  strcpy( product[1].itemName, "apple");
+
+  product[2].itemNumber = 2;
+  product[2].location = 43;
+  strcpy( product[2].itemName, "banana");
+
+  product[3].itemNumber = 3;
+  product[3].location = 23;
+  strcpy( product[3].itemName, "pineapple");
+
+  product[4].itemNumber = 4;
+  product[4].location = 63;
+  strcpy( product[4].itemName, "kiwi");
+
+  product[4].itemNumber = 5;
+  product[4].location = 27;
+  strcpy( product[4].itemName, "oranges");
+}
+
+void setResToProduct(ros_wms::AddTwoInts::Request  &req){
+  int n = req.itemNumber;
+  product[0].itemNumber = product[n].itemNumber;
+  product[0].location = product[n].location;
+  strcpy( product[n].itemName, product[0].itemName);
+}
 
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "add_two_ints_server");
-  // apple.itemNumber = 3;
-  // apple.location = 2;
-  // strcpy( apple.itemName, "apple");
-  // item.itemNumber = apple.itemNumber;
-  // item.location = apple.location;
-  // strcpy( apple.itemName, item.itemName);
+
   ros::NodeHandle n;
 
   ros::ServiceServer service = n.advertiseService("add_two_ints", add);

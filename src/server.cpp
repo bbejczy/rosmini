@@ -8,16 +8,18 @@
     char itemName[50];
     int itemNumber;
     int location;
-  } item, apple, banana;
+  };
+  struct product[n];
+  int n = 10;
 
 bool add(ros_wms::AddTwoInts::Request  &req,
          ros_wms::AddTwoInts::Response &res)
 {
   if (req.itemNumber = 1) {
-    res.itemNumber = apple.itemNumber;
-    std::cerr << "You should see this" << '\n';
-    std::cerr << "Request item number: " << req.itemNumber << '\n';
-    std::cerr << "Response item number: " << res.itemNumber << '\n';
+    // res.itemNumber = apple.itemNumber;
+    // std::cerr << "You should see this" << '\n';
+    // std::cerr << "Request item number: " << req.itemNumber << '\n';
+    // std::cerr << "Response item number: " << res.itemNumber << '\n';
 
   }
   return true;
@@ -26,12 +28,12 @@ bool add(ros_wms::AddTwoInts::Request  &req,
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "add_two_ints_server");
-  apple.itemNumber = 3;
-  apple.location = 2;
-  apple.itemName = apple;
-  item.itemNumber = apple.itemNumber;
-  item.location = apple.location;
-  item.itemName = apple.itemName;
+  // apple.itemNumber = 3;
+  // apple.location = 2;
+  // strcpy( apple.itemName, "apple");
+  // item.itemNumber = apple.itemNumber;
+  // item.location = apple.location;
+  // strcpy( apple.itemName, item.itemName);
   ros::NodeHandle n;
 
   ros::ServiceServer service = n.advertiseService("add_two_ints", add);

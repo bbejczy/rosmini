@@ -86,30 +86,24 @@ int main(int argc, char **argv)
   return 0;
 }
 
+#include <iostream>
+#include <ros/ros.h>
 
 
+using namespace std;
 
+void printItem( struct Items Item );
 
+struct Items {
+    int   itemNumber;
+    char  itemName[50];
+    float x_coordinate;
+    float y_coordinate;
+    int shelf;
+    int row;
+    int column;
+};
 
-// #include <iostream>
-// #include <ros/ros.h>
-//
-//
-//
-// using namespace std;
-//
-// void printItem( struct Items Item );
-//
-// struct Items {
-//     int   itemNumber;
-//     char  itemName[50];
-//     float x_coordinate;
-//     float y_coordinate;
-//     int shelf;
-//     int row;
-//     int column;
-// };
-//
 // int main(int argc, char *argv[])
 // {
 //     ros::init(argc, argv, "busroute");
@@ -125,17 +119,8 @@ int main(int argc, char **argv)
 //       Item[0].row = 1;
 //       Item[0].column = 44;
 //
-//       Item[1].itemNumber = 650;
-//       strcpy( Item[1].itemName, "Sune Petersen");
-//       Item[1].x_coordinate = 158.643924;
-//       Item[1].y_coordinate = 158.643924;
-//       Item[1].shelf = 2;
-//       Item[1].row = 3;
-//       Item[1].column = 24;
-//
 //     // Print Item1 info
 //     printItem( Item[0] );
-//     printItem( Item[1] );
 //
 //     ros::spin(); //Spinns the ros packages
 //     return 0;

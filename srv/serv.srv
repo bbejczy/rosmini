@@ -1,0 +1,9 @@
+int64 itemNumber
+---
+int64 itemNumber
+float64 x_coordinate
+float64 y_coordinate
+int64 shelf
+int64 row
+int64 column
+string itemName

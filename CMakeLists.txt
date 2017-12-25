@@ -58,7 +58,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate services in the 'srv' folder
  add_service_files(
    FILES
-   AddTwoInts.srv
+   serv.srv
  )
 
 ## Generate actions in the 'action' folder
@@ -165,6 +165,7 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
+
 ## Mark executables and/or libraries for installation
 # install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
@@ -202,5 +203,5 @@ include_directories(
 add_executable(server src/server.cpp)
 target_link_libraries(server ${catkin_LIBRARIES})
 
-##add_executable(client src/client.cpp)
-##target_link_libraries(client ${catkin_LIBRARIES})
+add_executable(client src/client.cpp)
+target_link_libraries(client ${catkin_LIBRARIES})

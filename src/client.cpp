@@ -11,8 +11,8 @@ void printResponse(){
   ros::ServiceClient client = n.serviceClient<ros_wms::serv>("wms");
   ros_wms::serv srv;
 
-  srv.request.itemNumber = x -1;
-  if (client.call(srv))
+  srv.request.itemNumber = x -1; //Sends x-1 to server
+  if (client.call(srv)) //recives response from server
   {
   std::cout << "Item name: " <<  srv.response.itemName << '\n';
   std::cout << "Item number: " << srv.response.itemNumber << '\n';
@@ -28,19 +28,19 @@ void printResponse(){
   }
 }
 
-void printList(){
+void printList(){ //requests all item names from server
   ros::NodeHandle n;
   ros::ServiceClient client = n.serviceClient<ros_wms::serv>("wms");
   ros_wms::serv srv;
   int count = 5;
-  for (int i = 0; i < count; i++)
+  for (int i = 0; i < count; i++) //runs the code below while i < count
   {
     int a = i + 1;
     if (client.call(srv))
 
     {
-      srv.request.itemNumber = i;
-      std::cout << "Item number " << a << ": " << srv.response.itemName << '\n';
+      srv.request.itemNumber = i; //requests item i
+      std::cout << "Item number " << a << ": " << srv.response.itemName << '\n'; //recieve item name for item i and prints it
     }
 
   }
@@ -112,15 +112,16 @@ int main(int argc, char **argv)
           break;
           }
 
-          if (y == 1)
+          if (y == 1) // if a number between 1 and 5 were picked it goes to printResponse
           printResponse();
 
           std::cout << "Do you want to continue retrieving data? (y/n)." << '\n';
           char ans;
           std::cin >> ans;
           if(ans == 'y')
-            goto label;
+            goto label; // if the user anwsers y the program jumps to the begining of the program
           else
 
+  ros::spin();
   return 0;
 }

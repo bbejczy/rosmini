@@ -6,7 +6,7 @@
 
   ros_wms::serv srv;
 
-  struct products {
+  struct products { //declares a struct called products
     int itemNumber;
     std::string itemName;
     float x_coordinate;
@@ -16,13 +16,13 @@
     int column;
   };
 
-  struct products *product;
+  struct products *product; //initiates the struct called product with a pointer as its size.
 
 bool add(ros_wms::serv::Request  &req,
          ros_wms::serv::Response &res)
 {
-    int n = req.itemNumber;
-
+    int n = req.itemNumber; //recives item number from client
+//Sends item information to client
     res.itemName = product[n].itemName;
     res.itemNumber = product[n].itemNumber;
     res.x_coordinate = product[n].x_coordinate;
@@ -42,6 +42,7 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
   int arrayLength = 5;
   //Hardcoded database
+  //Here the products are declared
   product = new struct products[arrayLength];
 
   product[0].itemNumber = 1;
@@ -85,40 +86,8 @@ int main(int argc, char **argv)
   product[4].shelf = 3;
 
   ros::ServiceServer service = n.advertiseService("wms", add);
-  ROS_INFO("The server is now active");
+  ROS_INFO("The server is now active"); //tels the user that the server is ready
   ros::spin();
 
   return 0;
 }
-// #include <tuple>
-// #include <iostream>
-// #include <string>
-// #include <stdexcept>
-// #include <ros/ros.h>
-//
-// std::tuple<double, char, std::string> get_student(int id)
-// {
-//     if (id == 0) return std::make_tuple(3.8, 'A', "Lisa Simpson");
-//     if (id == 1) return std::make_tuple(2.9, 'C', "Milhouse Van Houten");
-//     if (id == 2) return std::make_tuple(1.7, 'D', "Ralph Wiggum");
-//     throw std::invalid_argument("id");
-// }
-//
-// int main()
-// {
-//   ROS_ERROR("ROS_ERRORRRRRRRRRRRR");
-//     auto student0 = get_student(0);
-//     std::cerr << "ID: 0, "
-//               << "GPA: " << std::get<0>(student0) << ", "
-//               << "grade: " << std::get<1>(student0) << ", "
-//               << "name: " << std::get<2>(student0) << '\n';
-//
-//     double gpa1;
-//     char grade1;
-//     std::string name1;
-//     std::tie(gpa1, grade1, name1) = get_student(1);
-//     std::cerr << "ID: 1, "
-//               << "GPA: " << gpa1 << ", "
-//               << "grade: " << grade1 << ", "
-//               << "name: " << name1 << '\n';
-// }
